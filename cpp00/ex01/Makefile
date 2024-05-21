@@ -1,8 +1,10 @@
-NAME = megaphone
-SRCS = megaphone.cpp
-OBJS = $(SRCS:.cpp=.o)
-DEPS = $(SRCS:.cpp=.d)
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+NAME	=	phonebook
+SRCS	=	Contact.cpp \
+			PhoneBook.cpp \
+			main.cpp
+OBJS	=	$(SRCS:.cpp=.o)
+DEPS	=	$(SRCS:.cpp=.d)
+CFLAGS	=	-Wall -Wextra -Werror -MMD -MP -std=c++98
 
 all : $(NAME)
 
@@ -11,7 +13,7 @@ $(NAME) : $(OBJS)
 
 -include $(DEPS)
 
-%.o : %.c
+%.o : %.cpp
 	c++ $(CFLAGS) -c $< -o $@
 
 clean :

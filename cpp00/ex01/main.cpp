@@ -1,7 +1,7 @@
 #include "PhoneBook.hpp"
 
 int main() {
-	PhoneBook	phone_book;
+	PhoneBook	phonebook;
 	std::string	cmd;
 	int			index = 0;
 
@@ -9,12 +9,22 @@ int main() {
 		std::cout << "ADD 또는 SEARCH 또는 EXIT 중 하나를 입력하세요." << std::endl;
 		std::getline(std::cin, cmd, '\n');
 		if (cmd == "ADD") {
-			if (phone_book.add_contact(index) == 0)
+			int result = phonebook.add_contact(index);
+			if (result == 0)
 				index++;
+			else if (result == 1) {
+				std::cout << "<<<<<<<<<<<< error >>>>>>>>>>>>" << std::endl;
+				return (1);
+			}
 		}
 		else if (cmd == "SEARCH") {
-			phone_book.search_contact();
-			std::cin.ignore();
+			int result = phonebook.search_contact();
+			if (result == 0)
+				std::cin.ignore();
+			else if (result == 1) {
+				std::cout << "<<<<<<<<<<<< error >>>>>>>>>>>>" << std::endl;
+				return (1);
+			}
 		}
 		else if (cmd == "EXIT")
 			break;

@@ -7,36 +7,46 @@ int PhoneBook::add_contact(int index) {
 	std::string	phone_number;
 	std::string	secret;
 	
-	std::cout << "first name을 입력해주세요." << std::endl;
+	std::cout << "1. first name을 입력해주세요." << std::endl;
 	std::getline(std::cin, first_name, '\n');
-	if (first_name.empty())
+	if (std::cin.fail())
 		return (1);
-	std::cout << "last name을 입력해주세요." << std::endl;
+	else if (first_name.empty())
+		return (2);
+	std::cout << "2. last name을 입력해주세요." << std::endl;
 	std::getline(std::cin, last_name, '\n');
-	if (last_name.empty())
+	if (std::cin.fail())
 		return (1);
-	std::cout << "nickname을 입력해주세요." << std::endl;
+	else if (last_name.empty())
+		return (2);
+	std::cout << "3. nickname을 입력해주세요." << std::endl;
 	std::getline(std::cin, nickname, '\n');
-	if (nickname.empty())
+	if (std::cin.fail())
 		return (1);
-	std::cout << "phone number을 입력해주세요." << std::endl;
+	else if (nickname.empty())
+		return (2);
+	std::cout << "4. phone number을 입력해주세요." << std::endl;
 	std::getline(std::cin, phone_number, '\n');
-	if (phone_number.empty())
+	if (std::cin.fail())
 		return (1);
-	std::cout << "dark secret을 입력해주세요." << std::endl;
+	else if (phone_number.empty())
+		return (2);
+	std::cout << "5. dark secret을 입력해주세요." << std::endl;
 	std::getline(std::cin, secret, '\n');
-	if (secret.empty())
+	if (std::cin.fail())
+		return (2);
+	else if (secret.empty())
 		return (1);
 	contact[index % 8].set_contact(first_name, last_name, nickname, phone_number, secret);
 	return (0);
 }
 
-void PhoneBook::search_contact() {
+int PhoneBook::search_contact() {
 	int	index;
 
 	if (contact[0].is_empty()) {
 		std::cout << "저장된 연락처가 없습니다." << std::endl;
-		return ;
+		return (2);
 	}
 	for (int i = 0; i < 8; i++) {
 		if (contact[i].is_empty() == 0)
@@ -46,8 +56,7 @@ void PhoneBook::search_contact() {
 		std::cout << "몇번째 연락처를 보고싶으신가요?" << std::endl;
 		std::cin >> index;
 		if (std::cin.fail()) {
-			std::cin.clear();
-			return ;
+			return (1);
 		}
 		if (index >= 8 || index < 0 || contact[index].is_empty())
 			std::cout << "없는 연락처입니다." << std::endl;
@@ -55,4 +64,5 @@ void PhoneBook::search_contact() {
 			contact[index].show_contact_detail();
 		break ;
 	}
+	return (0);
 }

@@ -1,7 +1,6 @@
-NAME	=	zombiehorde
+NAME	=	harl
 SRCS	=	main.cpp \
-			Zombie.cpp \
-			zombieHorde.cpp
+			Harl.cpp
 OBJS	=	$(SRCS:.cpp=.o)
 DEPS	=	$(SRCS:.cpp=.d)
 CFLAGS	=	-Wall -Wextra -Werror -MMD -MP -std=c++98

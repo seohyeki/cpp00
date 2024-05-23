@@ -11,22 +11,40 @@ int main(int argc, char **argv) {
 		s1 = argv[2];
 		s2 = argv[3];
 
+		if (s1.length() == 0 || s2.length() == 0) {
+			std::cout << "Wrong arguments." << std::endl;
+			return (1);
+		}
+
 		std::ifstream	infile(filename);
-		std::ofstream	outfile(filename + ".replace");
-		std::string		s;
-		
-		if (!infile.is_open() || !outfile.is_open()) {
+		if (!infile.is_open()) {
 			std::cout << "File open error." << std::endl;
 			return (1);
 		}
+
+		std::ofstream	outfile(filename + ".replace");
+		if (!outfile.is_open()) {
+			std::cout << "File open error." << std::endl;
+			return (1);
+		}
+
+		std::string	s;
+		size_t		pos;
 		getline(infile, s);
 		while (infile) {
-			if (s == s1)
-				outfile << s2 << std::endl;
-			else
-				outfile << s << std::endl;
+			pos = 0;
+			pos = s.find(s1, pos);
+			while (pos != std::string::npos) {
+				s.erase(pos, s1.length());
+				s.insert(pos, s2);
+				pos += s2.length();
+				pos = s.find(s1, pos);
+			}
+			outfile << s << std::endl;
 			getline(infile, s);
 		}
+		outfile.close();
+		infile.close();
 	} else {
 		std::cout << "Wrong number of parameters." << std::endl;
 		return (1);

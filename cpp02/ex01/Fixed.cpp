@@ -40,3 +40,11 @@ void Fixed::setRawBits(int const raw) {
 	std::cout << "setRawBits member function called" << std::endl;
 	value = raw;
 }
+
+float Fixed::toFloat(void) const {
+
+}
+
+int Fixed::toInt(void) const {
+	
+}

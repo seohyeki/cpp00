@@ -1,4 +1,5 @@
 #include "PhoneBook.hpp"
+#include <sstream>
 
 int PhoneBook::add_contact(int index) {
 	std::string	first_name;
@@ -42,27 +43,32 @@ int PhoneBook::add_contact(int index) {
 }
 
 int PhoneBook::search_contact() {
-	int	index;
-
 	if (contact[0].is_empty()) {
 		std::cout << "저장된 연락처가 없습니다." << std::endl;
-		return (2);
+		return (0);
 	}
+
 	for (int i = 0; i < 8; i++) {
 		if (contact[i].is_empty() == 0)
 			contact[i].show_contact(i);
 	}
-	while (1) {
-		std::cout << "몇번째 연락처를 보고싶으신가요?" << std::endl;
-		std::cin >> index;
-		if (std::cin.fail()) {
-			return (1);
-		}
+
+	std::string			s;
+	std::cout << "몇번째 연락처를 보고싶으신가요?" << std::endl;
+	std::getline(std::cin, s, '\n');
+	if (std::cin.fail())
+		return (1);
+
+	std::stringstream	ss(s);
+	int					index;
+	ss >> index;
+	if (ss.eof()) {
 		if (index >= 8 || index < 0 || contact[index].is_empty())
 			std::cout << "없는 연락처입니다." << std::endl;
 		else
 			contact[index].show_contact_detail();
-		break ;
 	}
+	else
+		std::cout << "없는 연락처입니다." << std::endl;
 	return (0);
 }

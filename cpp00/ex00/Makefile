@@ -1,5 +1,5 @@
 NAME	=	megaphone
-SRCS	=	megaphone.cpp
+SRCS	=	$(wildcard *.cpp)
 OBJS	=	$(SRCS:.cpp=.o)
 DEPS	=	$(SRCS:.cpp=.d)
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98

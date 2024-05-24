@@ -1,8 +1,5 @@
 NAME	=	zombie
-SRCS	=	main.cpp \
-			newZombie.cpp \
-			randomChump.cpp \
-			Zombie.cpp
+SRCS	=	$(wildcard *.cpp)
 OBJS	=	$(SRCS:.cpp=.o)
 DEPS	=	$(SRCS:.cpp=.d)
 CFLAGS	=	-Wall -Wextra -Werror -MMD -MP -std=c++98

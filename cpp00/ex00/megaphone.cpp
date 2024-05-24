@@ -6,7 +6,7 @@ int main(int argc, char **argv) {
 	else {
 		for (int i = 1; i < argc; i++) {
 			std::string msg = argv[i];
-			for (int j = 0; j < msg.length(); j++) {
+			for (size_t j = 0; j < msg.length(); j++) {
 				msg[j] = toupper(msg[j]);
 			}
 			std::cout << msg;

@@ -1,6 +1,5 @@
 NAME	=	harlFilter
-SRCS	=	main.cpp \
-			Harl.cpp
+SRCS	=	$(wildcard *.cpp)
 OBJS	=	$(SRCS:.cpp=.o)
 DEPS	=	$(SRCS:.cpp=.d)
 CFLAGS	=	-Wall -Wextra -Werror -MMD -MP -std=c++98

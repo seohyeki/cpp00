@@ -1,7 +1,5 @@
 NAME	=	zombiehorde
-SRCS	=	main.cpp \
-			Zombie.cpp \
-			zombieHorde.cpp
+SRCS	=	$(wildcard *.cpp)
 OBJS	=	$(SRCS:.cpp=.o)
 DEPS	=	$(SRCS:.cpp=.d)
 CFLAGS	=	-Wall -Wextra -Werror -MMD -MP -std=c++98

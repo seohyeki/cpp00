@@ -15,14 +15,14 @@ int main(int argc, char **argv) {
 			std::cout << "Wrong arguments." << std::endl;
 			return (1);
 		}
-
-		std::ifstream	infile(filename);
+		
+		std::ifstream	infile(filename.c_str());
 		if (!infile.is_open()) {
 			std::cout << "File open error." << std::endl;
 			return (1);
 		}
 
-		std::ofstream	outfile(filename + ".replace");
+		std::ofstream	outfile((filename + ".replace").c_str());
 		if (!outfile.is_open()) {
 			std::cout << "File open error." << std::endl;
 			return (1);

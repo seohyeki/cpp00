@@ -1,6 +1,5 @@
 NAME	=	ex01
-SRCS	=	main.cpp \
-			Fixed.cpp
+SRCS	=	$(wildcard *.cpp)
 OBJS	=	$(SRCS:.cpp=.o)
 DEPS	=	$(SRCS:.cpp=.d)
 CFLAGS	=	-Wall -Wextra -Werror -MMD -MP -std=c++98

@@ -1,4 +1,5 @@
 #include "Fixed.hpp"
+#include <cmath>
 
 Fixed::Fixed() {
 	std::cout << "Default constructor called" << std::endl;
@@ -7,12 +8,12 @@ Fixed::Fixed() {
 
 Fixed::Fixed(const int fixed) {
 	std::cout << "Int constructor called" << std::endl;
-	setRawBits(fixed);
+	value = fixed << bits;
 }
 
 Fixed::Fixed(const float fixed) {
 	std::cout << "Float constructor called" << std::endl;
-	setRawBits(fixed);
+	value = roundf(fixed * (2^bits));
 }
 
 Fixed::~Fixed() {
@@ -42,9 +43,9 @@ void Fixed::setRawBits(int const raw) {
 }
 
 float Fixed::toFloat(void) const {
-
+	return ((float)value);
 }
 
 int Fixed::toInt(void) const {
-	
+	return (value >> bits);
 }

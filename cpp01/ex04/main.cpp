@@ -15,7 +15,7 @@ int main(int argc, char **argv) {
 			std::cout << "Wrong arguments." << std::endl;
 			return (1);
 		}
-		
+
 		std::ifstream	infile(filename.c_str());
 		if (!infile.is_open()) {
 			std::cout << "File open error." << std::endl;
@@ -40,8 +40,10 @@ int main(int argc, char **argv) {
 				pos += s2.length();
 				pos = s.find(s1, pos);
 			}
-			outfile << s << std::endl;
+			outfile << s;
 			getline(infile, s);
+			if (infile)
+				outfile << std::endl;
 		}
 		outfile.close();
 		infile.close();

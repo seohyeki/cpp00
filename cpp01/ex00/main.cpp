@@ -1,11 +1,11 @@
 #include "Zombie.hpp"
 
-void check_leaks() {
-	system("leaks zombie");
-}
+// void check_leaks() {
+// 	system("leaks zombie");
+// }
 
 int main() {
-	atexit(check_leaks);
+	// atexit(check_leaks);
 	Zombie stack("stack zombie");
 	Zombie *heap = newZombie("heap zombie");
 

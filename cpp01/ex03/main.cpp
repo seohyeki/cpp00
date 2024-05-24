@@ -1,12 +1,12 @@
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
-void check_leaks() {
-	system("leaks weapon");
-}
+// void check_leaks() {
+// 	system("leaks weapon");
+// }
 
 int main() {
-	atexit(check_leaks);
+	// atexit(check_leaks);
 	{
 		Weapon club = Weapon("crude spiked club");
 		HumanA bob("Bob", club);

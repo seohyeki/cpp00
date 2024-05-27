@@ -1,11 +1,11 @@
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap() {
-	std::cout << "scavtrap default constructor called" << std::endl;
+	std::cout << "[scavtrap] default constructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string _name) {
-	std::cout << "scavtrap constructor called" << std::endl;
+	std::cout << "[scavtrap] constructor called" << std::endl;
 	name = _name;
 	hp = 100;
 	energy = 50;
@@ -14,11 +14,11 @@ ScavTrap::ScavTrap(std::string _name) {
 }
 
 ScavTrap::~ScavTrap() {
-	std::cout << "scavtrap Destructor called" << std::endl;
+	std::cout << "[scavtrap] Destructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &obj) {
-	std::cout << "scavtrap Copy constructor called" << std::endl;
+	std::cout << "[scavtrap] Copy constructor called" << std::endl;
 	name = obj.name;
 	hp = obj.hp;
 	energy = obj.energy;
@@ -26,7 +26,7 @@ ScavTrap::ScavTrap(const ScavTrap &obj) {
 }
 
 ScavTrap& ScavTrap::operator = (const ScavTrap &obj) {
-	std::cout << "scavtrap Copy assignment operator called" << std::endl;
+	std::cout << "[scavtrap] Copy assignment operator called" << std::endl;
 	if (this != &obj) {
 		name = obj.name;
 		hp = obj.hp;
@@ -38,7 +38,7 @@ ScavTrap& ScavTrap::operator = (const ScavTrap &obj) {
 
 void ScavTrap::guardGate() {
 	if (keeper_mode)
-		std::cout << name << " Gate keeper mode." << std::endl;
+		std::cout << "[scavtrap.guardGate] " << name << " Gate keeper mode." << std::endl;
 	else
-		std::cout << name << " not Gate keeper mode." << std::endl;
+		std::cout << "[scavtrap.guardGate] " << name << " not Gate keeper mode." << std::endl;
 }

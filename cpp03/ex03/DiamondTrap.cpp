@@ -1,9 +1,15 @@
 #include "DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap() {
+	std::cout << "[diatrap] default constructor called" << std::endl;
+}
+
+DiamondTrap::DiamondTrap(std::string _name) {
+	std::cout << "[diatrap] constructor called" << std::endl;
 }
 
 DiamondTrap::~DiamondTrap() {
+	std::cout << "[diatrap] constructor called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &obj) {
@@ -15,4 +21,8 @@ DiamondTrap& DiamondTrap::operator = (const DiamondTrap &obj) {
 	/* data */
 	}
 	return *this;
+}
+
+void DiamondTrap::whoAmI() {
+
 }

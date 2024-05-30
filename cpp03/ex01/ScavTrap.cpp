@@ -1,16 +1,19 @@
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap() {
-	std::cout << "[scavtrap] default constructor called" << std::endl;
+	std::cout << "[scavtrap] Default constructor called" << std::endl;
+	name = "default scav";
+	hp = 100;
+	energy = 50;
+	damage = 20;
 }
 
 ScavTrap::ScavTrap(std::string _name) {
-	std::cout << "[scavtrap] constructor called" << std::endl;
+	std::cout << "[scavtrap] Constructor called" << std::endl;
 	name = _name;
 	hp = 100;
 	energy = 50;
 	damage = 20;
-	keeper_mode = 0;
 }
 
 ScavTrap::~ScavTrap() {
@@ -36,9 +39,26 @@ ScavTrap& ScavTrap::operator = (const ScavTrap &obj) {
 	return *this;
 }
 
-void ScavTrap::guardGate() {
-	if (keeper_mode)
-		std::cout << "[scavtrap.guardGate] " << name << " Gate keeper mode." << std::endl;
+void ScavTrap::attack(const std::string& target) {
+	if (hp > 0 && energy > 0) {
+		std::cout << "[scavtrap] " << name << " attack " << target << ", causing " << damage << " points of damage!" << std::endl;
+		energy--;
+		std::cout << "==============================================" << std::endl;
+		std::cout << name << std::endl;
+		std::cout << "HP: " << hp << std::endl;
+		std::cout << "ENERGY: " << energy << std::endl;
+		std::cout << "DAMAGE: " << damage << std::endl;
+		std::cout << "==============================================" << std::endl;
+	}
 	else
-		std::cout << "[scavtrap.guardGate] " << name << " not Gate keeper mode." << std::endl;
+		std::cout << "[scavtrap] " << name << " can’t do anything" << std::endl;
+}
+
+void ScavTrap::guardGate() {
+	if (hp > 0 && energy > 0) {
+		std::cout << "[scavtrap] " << name << " Gate keeper mode." << std::endl;
+		energy--;
+	}
+	else
+		std::cout << "[scavtrap] " << name << " can’t do anything" << std::endl;
 }

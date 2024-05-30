@@ -1,11 +1,15 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap() {
-	std::cout << "[claptrap] default constructor called" << std::endl;
+	std::cout << "[claptrap] Default constructor called" << std::endl;
+	name = "default clap";
+	hp = 10;
+	energy = 10;
+	damage = 0;
 }
 
 ClapTrap::ClapTrap(std::string _name){
-	std::cout << "[claptrap] constructor called" << std::endl;
+	std::cout << "[claptrap] Constructor called" << std::endl;
 	name = _name;
 	hp = 10;
 	energy = 10;
@@ -37,22 +41,23 @@ ClapTrap& ClapTrap::operator = (const ClapTrap &obj) {
 
 void ClapTrap::attack(const std::string& target) {
 	if (hp > 0 && energy > 0) {
-		std::cout << "[claptrap.attack] " << name << " attack " << target << ", causing " << damage << " points of damage!" << std::endl;
+		std::cout << "[claptrap] " << name << " attack " << target << ", causing " << damage << " points of damage!" << std::endl;
 		energy--;
 		std::cout << "==============================================" << std::endl;
 		std::cout << name << std::endl;
 		std::cout << "HP: " << hp << std::endl;
 		std::cout << "ENERGY: " << energy << std::endl;
+		std::cout << "DAMAGE: " << damage << std::endl;
 		std::cout << "==============================================" << std::endl;
 	}
 	else {
-		std::cout << "[claptrap.attack] " << name << " can’t do anything" << std::endl;
+		std::cout << "[claptrap] " << name << " can’t do anything" << std::endl;
 	}
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
 	if (hp > 0) {
-		std::cout << "[claptrap.takeDamage] " << name << " take damage " << amount << std::endl;
+		std::cout << "[claptrap] " << name << " take damage " << amount << std::endl;
 		if (hp < amount)
 			hp = 0;
 		else
@@ -61,22 +66,24 @@ void ClapTrap::takeDamage(unsigned int amount) {
 		std::cout << name << std::endl;
 		std::cout << "HP: " << hp << std::endl;
 		std::cout << "ENERGY: " << energy << std::endl;
+		std::cout << "DAMAGE: " << damage << std::endl;
 		std::cout << "==============================================" << std::endl;
 	}
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
 	if (energy > 0) {
-		std::cout << "[claptrap.beRepaired] " << name << " be repaired " << amount << std::endl;
+		std::cout << "[claptrap] " << name << " be repaired " << amount << std::endl;
 		energy--;
 		hp += amount;
 		std::cout << "==============================================" << std::endl;
 		std::cout << name << std::endl;
 		std::cout << "HP: " << hp << std::endl;
 		std::cout << "ENERGY: " << energy << std::endl;
+		std::cout << "DAMAGE: " << damage << std::endl;
 		std::cout << "==============================================" << std::endl;
 	}
 	else {
-		std::cout << "[claptrap.beRepaired] " << name << " can’t do anything" << std::endl;
+		std::cout << "[claptrap] " << name << " can’t do anything" << std::endl;
 	}
 }

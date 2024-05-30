@@ -4,12 +4,14 @@ int main() {
 	ClapTrap a("a");
 	ClapTrap b("b");
 
+	/*hp 소모*/
 	a.attack("target");
 	a.takeDamage(5);
 	a.takeDamage(6);
 	a.beRepaired(10);
 	a.takeDamage(100);
 
+	/*energy 소모*/
 	b.attack("target1");
 	b.attack("target2");
 	b.attack("target3");

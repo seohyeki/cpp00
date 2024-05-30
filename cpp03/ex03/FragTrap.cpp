@@ -2,6 +2,10 @@
 
 FragTrap::FragTrap() {
 	std::cout << "[fragtrap] default constructor called" << std::endl;
+	name = "default frag";
+	hp = 100;
+	energy = 100;
+	damage = 30;
 }
 
 FragTrap::FragTrap(std::string _name) {
@@ -36,5 +40,11 @@ FragTrap& FragTrap::operator = (const FragTrap &obj) {
 }
 
 void FragTrap::highFivesGuys() {
-	std::cout << "[fragtrap.highFivesGuys] high fives!?" <<std::endl;
+	if (hp > 0 && energy > 0) {
+		std::cout << "[fragtrap] " << name << " high fives!?" <<std::endl;
+		energy--;
+	}
+	else
+		std::cout << "[fragtrap] " << name << " can’t do anything" << std::endl;
+	
 }

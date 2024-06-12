@@ -9,11 +9,11 @@ class Fixed {
 			static const int	bits = 8;
 	public:
 			Fixed();
-			Fixed(const int fixed);
-			Fixed(const float fixed);
+			Fixed(const int num);
+			Fixed(const float num);
 			~Fixed();
-			Fixed(const Fixed &fixed);
-			Fixed& operator = (const Fixed &fixed);
+			Fixed(const Fixed &obj);
+			Fixed& operator=(const Fixed &obj);
 			int		getRawBits(void) const;
 			void	setRawBits(int const raw);
 			float	toFloat(void) const;

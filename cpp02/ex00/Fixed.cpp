@@ -9,15 +9,15 @@ Fixed::~Fixed() {
 	std::cout << "Destructor called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed &fixed) {
+Fixed::Fixed(const Fixed &obj) {
 	std::cout << "Copy constructor called" << std::endl;
-	value = fixed.value;
+	value = obj.value;
 }
 
-Fixed& Fixed::operator=(const Fixed &fixed) {
+Fixed& Fixed::operator=(const Fixed &obj) {
 	std::cout << "Copy assignment operator called" << std::endl;
-	if (this != &fixed)
-		value = fixed.value;
+	if (this != &obj)
+		value = obj.value;
 	return (*this);
 }
 

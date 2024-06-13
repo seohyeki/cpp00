@@ -9,7 +9,7 @@ DiamondTrap::DiamondTrap(std::string _name) {
 }
 
 DiamondTrap::~DiamondTrap() {
-	std::cout << "[diatrap] constructor called" << std::endl;
+	std::cout << "[diatrap] Destructor called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &obj) {

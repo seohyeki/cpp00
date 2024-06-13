@@ -1,13 +1,12 @@
 #include "ClapTrap.hpp"
 
 int main() {
-	ClapTrap a("a");
-	ClapTrap b("b");
+	ClapTrap a("clap_a");
+	ClapTrap b("clap_b");
 
 	/*hp 소모*/
 	a.attack("target");
 	a.takeDamage(5);
-	a.takeDamage(6);
 	a.beRepaired(10);
 	a.takeDamage(100);
 

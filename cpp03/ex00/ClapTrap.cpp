@@ -50,9 +50,8 @@ void ClapTrap::attack(const std::string& target) {
 		std::cout << "DAMAGE: " << damage << std::endl;
 		std::cout << "==============================================" << std::endl;
 	}
-	else {
+	else
 		std::cout << name << " can’t do anything" << std::endl;
-	}
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
@@ -85,7 +84,6 @@ void ClapTrap::beRepaired(unsigned int amount) {
 		std::cout << "DAMAGE: " << damage << std::endl;
 		std::cout << "==============================================" << std::endl;
 	}
-	else {
+	else
 		std::cout << name << " can’t do anything" << std::endl;
-	}
 }

@@ -3,14 +3,14 @@
 int main() {
 	Fixed		a;
 	Fixed const	b( Fixed( 5.05f ) * Fixed( 2 ) );
-	Fixed		c(1);
-	Fixed		d(3);
+	Fixed c(5);
+	Fixed d(10);
 
-	std::cout << "====================================" << std::endl;
-	std::cout << (c == d) << std::endl;
-	std::cout << (c != d) << std::endl;
+	std::cout << "5 > 10 : " << (c > d) << std::endl;
+	std::cout << "5 < 10 : " << (c < d) << std::endl;
+	std::cout << "5 == 10 : " << (c == d) << std::endl;
+	std::cout << "5 != 10 : " << (c != d) << std::endl;
 
-	std::cout << "====================================" << std::endl;
 	std::cout << a << std::endl;
 	std::cout << ++a << std::endl;
 	std::cout << a << std::endl;

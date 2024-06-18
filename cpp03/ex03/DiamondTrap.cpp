@@ -16,7 +16,7 @@ DiamondTrap::DiamondTrap(const DiamondTrap &obj) {
 	/* data */
 }
 
-DiamondTrap& DiamondTrap::operator = (const DiamondTrap &obj) {
+DiamondTrap& DiamondTrap::operator=(const DiamondTrap &obj) {
 	if (this != &obj) {
 	/* data */
 	}

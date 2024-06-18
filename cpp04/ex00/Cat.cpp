@@ -13,7 +13,7 @@ Cat::Cat(const Cat &obj) {
 	type = obj.type;
 }
 
-Cat& Cat::operator = (const Cat &obj) {
+Cat& Cat::operator=(const Cat &obj) {
 	if (this != &obj) {
 		type = obj.type;
 	}
@@ -21,5 +21,5 @@ Cat& Cat::operator = (const Cat &obj) {
 }
 
 void Cat::makeSound() const{
-	std::cout << "meawoooooo" << std::endl;
+	std::cout << "meawoo~" << std::endl;
 }

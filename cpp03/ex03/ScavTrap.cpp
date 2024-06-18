@@ -28,7 +28,7 @@ ScavTrap::ScavTrap(const ScavTrap &obj) {
 	damage = obj.damage;
 }
 
-ScavTrap& ScavTrap::operator = (const ScavTrap &obj) {
+ScavTrap& ScavTrap::operator=(const ScavTrap &obj) {
 	std::cout << "[scavtrap] Copy assignment operator called" << std::endl;
 	if (this != &obj) {
 		name = obj.name;

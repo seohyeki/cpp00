@@ -6,7 +6,7 @@ Brain::Brain() {
 }
 
 Brain::~Brain() {
-	std::cout << "Destroy Brain!" << std::endl;
+	std::cout << "Destory Brain!" << std::endl;
 }
 
 Brain::Brain(const Brain &obj) {

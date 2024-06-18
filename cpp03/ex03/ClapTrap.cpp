@@ -28,7 +28,7 @@ ClapTrap::ClapTrap(const ClapTrap &obj) {
 	damage = obj.damage;
 }
 
-ClapTrap& ClapTrap::operator = (const ClapTrap &obj) {
+ClapTrap& ClapTrap::operator=(const ClapTrap &obj) {
 	std::cout << "[claptrap] Copy assignment operator called" << std::endl;
 	if (this != &obj) {
 		name = obj.name;

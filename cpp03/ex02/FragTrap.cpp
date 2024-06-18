@@ -28,7 +28,7 @@ FragTrap::FragTrap(const FragTrap &obj) {
 	damage = obj.damage;
 }
 
-FragTrap& FragTrap::operator = (const FragTrap &obj) {
+FragTrap& FragTrap::operator=(const FragTrap &obj) {
 	std::cout << "[fragtrap] Copy assignment operator called" << std::endl;
 	if (this != &obj) {
 		name = obj.name;

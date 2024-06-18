@@ -13,7 +13,7 @@ Dog::Dog(const Dog &obj) {
 	type = obj.type;
 }
 
-Dog& Dog::operator = (const Dog &obj) {
+Dog& Dog::operator=(const Dog &obj) {
 	if (this != &obj) {
 		type = obj.type;
 	}
@@ -21,5 +21,5 @@ Dog& Dog::operator = (const Dog &obj) {
 }
 
 void Dog::makeSound() const {
-	std::cout << "barkkkkkkkkkk" << std::endl;
+	std::cout << "bark!" << std::endl;
 }
